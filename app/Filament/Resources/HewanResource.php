@@ -9,6 +9,8 @@ use Filament\Tables;
 use Filament\Resources\Resource;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Columns\ImageColumn;
 
 class HewanResource extends Resource
 {
@@ -40,6 +42,14 @@ class HewanResource extends Resource
                 ->label('Pemilik')
                 ->required()
                 ->searchable(),
+
+            Forms\Components\FileUpload::make('foto')
+                ->label('Foto Hewan')
+                ->image()
+                ->directory('hewans')   // folder penyimpanan
+                ->disk('public')
+                ->imageEditor()
+                ->nullable(),
         ]);
     }
 
@@ -51,6 +61,11 @@ class HewanResource extends Resource
                 Tables\Columns\TextColumn::make('jenis.nama_jenis')->label('Jenis Hewan')->sortable(),
                 Tables\Columns\TextColumn::make('pemilik.nama_pemilik')->label('Pemilik')->sortable(),
                 Tables\Columns\TextColumn::make('umur')->label('Umur'),
+
+                ImageColumn::make('foto')
+                    ->label('Foto')
+                    ->disk('public')
+                    ->square(),
             ])
             ->actions([Tables\Actions\EditAction::make()])
             ->bulkActions([Tables\Actions\DeleteBulkAction::make()]);

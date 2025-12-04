@@ -16,6 +16,7 @@ class Hewan extends Model
         'umur',
         'jenis_id',
         'pemilik_id',
+        'foto',
     ];
 
     public function jenis()

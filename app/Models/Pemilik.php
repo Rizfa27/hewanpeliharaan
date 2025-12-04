@@ -14,6 +14,7 @@ class Pemilik extends Model
     protected $fillable = [
         'nama_pemilik',
         'alamat',
+        'foto',
     ];
 
     public function hewan()
