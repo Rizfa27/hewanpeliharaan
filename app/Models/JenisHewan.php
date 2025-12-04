@@ -9,7 +9,7 @@ class JenisHewan extends Model
 {
     use HasFactory;
 
-    protected $table = 'jenis_hewan';
+    protected $table = 'jenis_hewans';
 
     protected $fillable = [
         'nama_jenis',

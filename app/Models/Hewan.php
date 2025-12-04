@@ -9,7 +9,7 @@ class Hewan extends Model
 {
     use HasFactory;
 
-    protected $table = 'hewan';
+    protected $table = 'hewans';
 
     protected $fillable = [
         'nama_hewan',

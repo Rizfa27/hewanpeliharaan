@@ -9,7 +9,7 @@ class Pemilik extends Model
 {
     use HasFactory;
 
-    protected $table = 'pemilik';
+    protected $table = 'pemiliks';
 
     protected $fillable = [
         'nama_pemilik',
