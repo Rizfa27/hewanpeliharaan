@@ -16,11 +16,15 @@ return new class extends Migration
             $table->string('nama_hewan');
             $table->integer('umur')->nullable();
 
-            $table->foreign('jenis-id')
-                ->constrained('pemilik')
+            $table->foreign('jenis_id')
+                ->constrained('jenis_hewan')
                 ->onUpdate('casade')
                 ->onDelete('cascade');
 
+            $table->foreign('pemilik_id')
+                ->constrained('pemilik')
+                ->onUpdate('casade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
